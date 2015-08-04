@@ -1,0 +1,6 @@
+%h2= @video.title
+%p= @video.description
+
+= link_to "back", root_path
+= link_to 'edit', edit_video_path
+= link_to 'delete', video_path, method: :delete, data: {confirm: "Are you sure, danny. Asegurate bien brother"}

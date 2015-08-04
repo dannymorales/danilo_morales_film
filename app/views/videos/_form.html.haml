@@ -1,0 +1,17 @@
+= simple_form_for(@video, html: { multipart: true }) do |f|
+	-if @video.errors.any?
+		#errors
+			%h2
+			= pluralize(@video.error.count, 'error')
+			prevented this video from saving
+			%ul
+				-@video.error.full_messages.each do |msg|
+					%li= msg
+
+	.form-group
+		= f.input :title, input_html: { class: 'form-control' }
+
+	.form-group
+		= f.input :description, input_html: { class: 'form-control' }
+
+	= f.button :submit, class: "btn btn-primary"
